@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haleemah Ali 💖 Success in UCE!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff6b9d;
+      --soft-pink: #ffb6c1;
+      --lavender: #e0b0ff;
+      --peach: #ffd1dc;
+      --cream: #fff5f7;
+      --deep-pink: #c44569;
+      --gold: #ffd700;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff5f7 0%, #ffe4ec 40%, #f3e5f5 100%);
+      color: #4a2c4a;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Floating background hearts & sparkles */
+    .bg-emoji {
+      position: fixed;
+      font-size: 1.6rem;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatUp 18s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.25; }
+      90% { opacity: 0.2; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Dancing sticker that moves around */
+    .dancing-sticker {
+      position: fixed;
+      font-size: 3.2rem;
+      z-index: 999;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.4));
+      animation: danceMove 12s ease-in-out infinite, spinDance 3s ease-in-out infinite;
+    }
+
+    @keyframes danceMove {
+      0%   { top: 12%; left: 8%;  transform: scale(1) rotate(-8deg); }
+      20%  { top: 25%; left: 75%; transform: scale(1.15) rotate(12deg); }
+      40%  { top: 60%; left: 15%; transform: scale(0.95) rotate(-15deg); }
+      60%  { top: 35%; left: 80%; transform: scale(1.2) rotate(10deg); }
+      80%  { top: 70%; left: 40%; transform: scale(1.05) rotate(-5deg); }
+      100% { top: 12%; left: 8%;  transform: scale(1) rotate(-8deg); }
+    }
+
+    @keyframes spinDance {
+      0%, 100% { transform: rotate(-10deg) scale(1); }
+      25% { transform: rotate(15deg) scale(1.1); }
+      50% { transform: rotate(-8deg) scale(0.95); }
+      75% { transform: rotate(12deg) scale(1.08); }
+    }
+
+    /* Header / Welcome */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 182, 193, 0.4), transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(224, 176, 255, 0.35), transparent 50%);
+      pointer-events: none;
+    }
+
+    .welcome-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--pink), var(--lavender));
+      color: white;
+      padding: 0.4rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.35);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3.2rem, 10vw, 5.5rem);
+      color: var(--deep-pink);
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      text-shadow: 2px 2px 0 rgba(255, 182, 193, 0.5);
+      animation: fadeInUp 1.1s ease-out 0.2s both;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+      font-weight: 500;
+      color: #7a3b6b;
+      margin-bottom: 0.8rem;
+      animation: fadeInUp 1.1s ease-out 0.4s both;
+    }
+
+    .hero .exam-text {
+      font-size: 1.15rem;
+      color: #9b5b8a;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      animation: fadeInUp 1.1s ease-out 0.6s both;
+    }
+
+    .sparkle-row {
+      font-size: 1.8rem;
+      letter-spacing: 0.4rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.1s ease-out 0.8s both, pulse 2s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--pink), #ff8fab);
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+      transition: all 0.35s ease;
+      animation: fadeInUp 1.1s ease-out 1s both;
+      text-decoration: none;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(255, 107, 157, 0.55);
+    }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      color: var(--deep-pink);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #9b5b8a;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .photo-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(255, 105, 180, 0.28);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .photo-card .caption {
+      padding: 1rem 1.1rem;
+      font-size: 0.95rem;
+      color: #7a3b6b;
+      text-align: center;
+      background: linear-gradient(to right, #fff5f7, #ffe4ec);
+    }
+
+    /* Wishes section */
+    .wishes {
+      background: linear-gradient(180deg, transparent, rgba(255, 182, 193, 0.25) 20%, rgba(224, 176, 255, 0.2) 80%, transparent);
+    }
+
+    .wish-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .wish-card {
+      background: white;
+      border-radius: 22px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.12);
+      text-align: center;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 2px solid transparent;
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    .wish-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wish-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--soft-pink);
+      box-shadow: 0 14px 35px rgba(255, 105, 180, 0.22);
+    }
+
+    .wish-card .emoji {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .wish-card h3 {
+      font-size: 1.2rem;
+      color: var(--deep-pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .wish-card p {
+      font-size: 0.95rem;
+      color: #7a3b6b;
+      line-height: 1.55;
+    }
+
+    /* Big message */
+    .big-message {
+      text-align: center;
+      max-width: 700px;
+      margin: 3rem auto 0;
+      padding: 2.2rem 1.8rem;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(255, 105, 180, 0.18);
+      border: 3px solid var(--soft-pink);
+      position: relative;
+    }
+
+    .big-message::before {
+      content: '💖';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      background: white;
+      padding: 0 10px;
+    }
+
+    .big-message p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #6b3a5e;
+    }
+
+    .big-message .name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: var(--deep-pink);
+      display: block;
+      margin-top: 0.8rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+      color: #9b5b8a;
+      font-size: 0.95rem;
+    }
+
+    footer .hearts {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.3rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .photo-card img {
+        height: 300px;
+      }
+      .dancing-sticker {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating background emojis -->
+  <div class="bg-emoji" style="left: 5%; animation-delay: 0s;">💖</div>
+  <div class="bg-emoji" style="left: 15%; animation-delay: 3s;">✨</div>
+  <div class="bg-emoji" style="left: 25%; animation-delay: 6s;">🌸</div>
+  <div class="bg-emoji" style="left: 40%; animation-delay: 1.5s;">💕</div>
+  <div class="bg-emoji" style="left: 55%; animation-delay: 4.5s;">🌟</div>
+  <div class="bg-emoji" style="left: 70%; animation-delay: 2s;">🎀</div>
+  <div class="bg-emoji" style="left: 85%; animation-delay: 7s;">💗</div>
+  <div class="bg-emoji" style="left: 92%; animation-delay: 5s;">✨</div>
+
+  <!-- Dancing sticker that moves around -->
+  <div class="dancing-sticker">💃</div>
+
+  <!-- HERO / WELCOME -->
+  <section class="hero" id="home">
+    <div class="welcome-badge">✨ Special Wish ✨</div>
+    <h1>Haleemah Ali</h1>
+    <p class="subtitle">You’ve got this, Queen! 👑</p>
+    <p class="exam-text">
+      Wishing you all the success, confidence and good vibes for your <strong>UCE exams</strong>.  
+      May every paper be kind to you and every answer flow beautifully 💕
+    </p>
+    <div class="sparkle-row">🎉 💖 ✨ 🎊 🌟 🥳</div>
+    <a href="#photos" class="cta-btn">See the Memories 🌸</a>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="photos">
+    <h2 class="section-title">Beautiful Moments 💕</h2>
+    <p class="section-sub">Our shining star looking fabulous as always</p>
+
+    <div class="gallery">
+      <div class="photo-card">
+        <img src="1000264192.jpg" alt="Haleemah looking stunning" />
+        <div class="caption">Barbie vibes 💖 Class of 2026</div>
+      </div>
+      <div class="photo-card">
+        <img src="1000264193.jpg" alt="Haleemah sitting pose" />
+        <div class="caption">Serving looks ✨</div>
+      </div>
+      <div class="photo-card">
+        <img src="1000264191.jpg" alt="Haleemah by the mirror" />
+        <div class="caption">Confident & glowing 🌸</div>
+      </div>
+      <div class="photo-card">
+        <img src="1000263419.jpg" alt="Haleemah peace signs" />
+        <div class="caption">Peace, love & success ✌️</div>
+      </div>
+      <div class="photo-card">
+        <img src="1000263443.jpg" alt="Haleemah with friends" />
+        <div class="caption">Squad goals 💕</div>
+      </div>
+      <div class="photo-card">
+        <img src="1000348344.jpg" alt="Selfie with Haleemah" />
+        <div class="caption">Cousin love 🥰</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHES -->
+  <section class="wishes" id="wishes">
+    <h2 class="section-title">All the Best Wishes 🌟</h2>
+    <p class="section-sub">From the heart, just for you</p>
+
+    <div class="wish-grid">
+      <div class="wish-card">
+        <span class="emoji">📚</span>
+        <h3>Stay Confident</h3>
+        <p>You’ve prepared well. Trust yourself and walk into that exam room like the queen you are.</p>
+      </div>
+      <div class="wish-card">
+        <span class="emoji">💪</span>
+        <h3>You’ve Got This</h3>
+        <p>Every challenge you’ve faced has prepared you for this moment. Go shine, Haleemah!</p>
+      </div>
+      <div class="wish-card">
+        <span class="emoji">🌈</span>
+        <h3>Bright Future</h3>
+        <p>This is just the beginning of your beautiful chapter. Success is already written for you.</p>
+      </div>
+      <div class="wish-card">
+        <span class="emoji">💖</span>
+        <h3>We Believe in You</h3>
+        <p>Your family and loved ones are rooting for you every single step of the way.</p>
+      </div>
+    </div>
+
+    <div class="big-message">
+      <p>
+        Dear Haleemah,<br><br>
+        May your pens write excellence, your mind stay clear, and your heart stay calm.  
+        You are smart, beautiful, and capable of amazing things.  
+        Go make us all proud — we already are! 💕
+      </p>
+      <span class="name">With all my love 💖</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="hearts">💕 ✨ 🌸 💖 ✨ 💕</div>
+    <p>Made with love for Haleemah Ali • UCE Success 2026</p>
+    <p style="margin-top: 0.4rem; font-size: 0.85rem;">You’ve got this, girl! 👑</p>
+  </footer>
+
+  <script>
+    // Scroll reveal for cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.photo-card, .wish-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for CTA
+    document.querySelector('.cta-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#photos').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Extra floating sparkles on click (fun effect)
+    document.body.addEventListener('click', (e) => {
+      if (e.target.closest('.dancing-sticker')) return;
+      const sparkle = document.createElement('div');
+      sparkle.textContent = ['✨','💖','🌸','⭐','💕'][Math.floor(Math.random()*5)];
+      sparkle.style.cssText = `
+        position: fixed;
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        font-size: 1.4rem;
+        pointer-events: none;
+        z-index: 1000;
+        animation: sparklePop 0.9s ease-out forwards;
+      `;
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 900);
+    });
+
+    // Add the sparkle animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes sparklePop {
+        0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; }
+        100% { transform: translate(-50%, -120%) scale(1.4); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
